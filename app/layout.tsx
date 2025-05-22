@@ -12,8 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Unlock Your Potential - Developer Toolbox for Effortless Productivity";
-const description = "Unlock your full potential with our developer toolbox—crafted to boost your productivity and streamline your development workflow like never before.";
+const title =
+  "Unlock Your Potential - Developer Toolbox for Effortless Productivity";
+const description =
+  "Unlock your full potential with our developer toolbox—crafted to boost your productivity and streamline your development workflow like never before.";
 const keywords = [
   "developer tools",
   "free API",
