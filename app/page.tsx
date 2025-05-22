@@ -1,7 +1,14 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 import logo from "@/components/images/logo.png";
+import NotReadyDialog from "@/components/not-ready-dialog";
 
 export default function Home() {
   return (
@@ -19,33 +26,55 @@ export default function Home() {
           rizentium
         </h1>
         <p className="text-md sm:text-lg text-gray-700 mb-8 leading-relaxed">
-          Unlock your full potential with our toolbox—crafted to boost your productivity and make your development workflow smoother than ever.
+          Unlock your full potential with our toolbox—crafted to boost your
+          productivity and make your development workflow smoother than ever.
         </p>
       </div>
       <div className="w-full max-w-5xl grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Example tool item */}
-        <Card className="shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50">
+        <Link href={`/tools/json-toolkit`}>
+          <Card
+            className={`flex flex-col shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50 h-full`}
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardHeader>
+              <CardTitle>{`JSON Toolkit`}</CardTitle>
+              <CardDescription>{`A powerful suite of tools for manipulating and validating JSON data.`}</CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <NotReadyDialog>
+          <Card
+            className={`flex flex-col shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50 h-full`}
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardHeader>
+              <CardTitle>Barcode Generator</CardTitle>
+              <CardDescription>
+                Generate barcodes instantly with support for multiple barcode
+                formats and easy export options.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </NotReadyDialog>
+        <Card
+          className={`flex flex-col shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50 h-full`}
+          style={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <CardHeader>
-            <CardTitle>Barcode Generator</CardTitle>
-            <CardDescription>
-              Generate barcodes instantly with support for multiple barcode formats and easy export options.
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card className="shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50">
-          <CardHeader>
-            <CardTitle>JSON Toolkit</CardTitle>
-            <CardDescription>
-              A powerful suite of tools for manipulating and validating JSON data.
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card className="shadow-none hover:shadow hover:cursor-pointer transition-all duration-300 hover:bg-gray-50">
-          <CardHeader>
-            <CardTitle>Coming soon</CardTitle>
-            <CardDescription>
-              Stay tuned for more exciting tools and features that will enhance your productivity and streamline your workflow.
-            </CardDescription>
+            <CardTitle>{`Coming soon`}</CardTitle>
+            <CardDescription>{`Stay tuned for more exciting tools and features that will enhance your productivity and streamline your workflow.`}</CardDescription>
           </CardHeader>
         </Card>
       </div>
